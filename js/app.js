@@ -53,6 +53,7 @@ const handleFileUploading = (file, uiniqueIndentifier) => {
     //opening connection to the server api endpoint and sendign the form data
     xhr.open('POST', `https://api.cloudinary.com/v1_1/dvxkqpj2v/image/upload`, true);
     xhr.send(formData);
+    return xhr;
 };
 
 //Function to handle selected file
@@ -65,7 +66,20 @@ const handleSelectedFile = ([...files]) => {
         const fileHTML = createFileItemHTM(file, uiniqueIndentifier);
         //inserting each file item into lisr
         filesList.insertAdjacentHTML('afterbegin', fileHTML);
-        handleFileUploading(file, uiniqueIndentifier);
+        const currentFileItem = document.querySelector(`#file-item-${uiniqueIndentifier}`);
+        const cancelFileUpload = currentFileItem.querySelector('.cancel-button');
+        const xhr = handleFileUploading(file, uiniqueIndentifier);
+
+        xhr.addEventListener('readystatechange', () => {
+
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                currentFileItem.querySelector('.file-status').textContent = `Completed`;
+                currentFileItem.querySelector('.file-status').style.color = `#00b125`;
+                cancelFileUpload.remove();
+            } else {
+                console.log('no se pudo subir al servidor');
+            };
+        });
     });
 };
 
