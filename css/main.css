@@ -56,11 +56,15 @@ body {
 .file-uploader .file-list {
     width: 100%;
     list-style: none;
-    padding: var(--paddig);
+    padding-bottom: 10px;
     max-height: 400px;
     overflow-y: auto;
     scrollbar-color: hsl(0, 0%, 60%) transparent;
     scrollbar-width: thin;
+}
+
+.file-uploader .file-list:has(li) {
+    padding: var(--paddig);
 }
 
 .file-list .file-item {
@@ -77,6 +81,7 @@ body {
     border-radius: .5em;
     display: flex;
     font-size: .9em;
+    text-transform: uppercase;
     justify-content: center;
     align-items: center;
 }
@@ -138,7 +143,7 @@ body {
 }
 
 .file-list .file-item .file-progress-bar .file-progress {
-    width: 50%;
+    width: 0%;
     height: inherit;
     border-radius: initial;
     background-color: hsl(219, 100%, 50%);
