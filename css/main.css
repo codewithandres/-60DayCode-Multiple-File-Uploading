@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root {
+    --bg-color: hsl(235, 43%, 5%);
+    --bg-color-white: hsl(0, 0%, 100%);
+    --paddig: 1.2em;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,4 +13,159 @@
 
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.file-uploader {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--bg-color-white);
+    margin: 0 1em;
+    border-radius: .5em;
+}
+
+.file-uploader .uploader-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--paddig);
+    background-color: hsl(226, 62%, 96%);
+    border-radius: 5px 5px 0 0;
+}
+
+.uploader-header .uploader-title {
+    font-size: var(--paddig);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.uploader-header .file-compled-status {
+    font-weight: 500;
+    font-size: 1em;
+    color: hsl(0, 0%, 20%);
+}
+
+.file-uploader .file-list {
+    width: 100%;
+    list-style: none;
+    padding: var(--paddig);
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-color: hsl(0, 0%, 60%) transparent;
+    scrollbar-width: thin;
+}
+
+.file-list .file-item {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1.2em;
+}
+
+.file-list .file-item .file-extension {
+    width: 40px;
+    height: 40px;
+    background-color: hsl(236, 63%, 11%);
+    color: var(--bg-color-white);
+    border-radius: .5em;
+    display: flex;
+    font-size: .9em;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-list .file-item .file-content-wrapper {
+    flex: 1;
+}
+
+.file-list .file-item .file-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.file-list .file-item .file-name {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.file-list .file-item .file-info {
+    display: flex;
+    gap: 5px;
+}
+
+.file-list .file-item .file-divider i {
+    font-size: .7em;
+}
+
+.file-list .file-item .file-info small {
+    font-size: 0.87em;
+    color: #5c5c5c;
+    display: block;
+
+}
+
+.file-list .file-item .file-info .file-status {
+    color: hsl(219, 100%, 50%);
+}
+
+.file-list .file-item .cancel-button {
+    align-self: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.4rem;
+
+    &:hover {
+        color: hsl(1, 75%, 57%);
+    }
+}
+
+.file-list .file-item .file-progress-bar {
+    width: 100%;
+    height: 3px;
+    border-radius: 30px;
+    background-color: hsl(0, 0%, 85%);
+    margin-top: .5em;
+}
+
+.file-list .file-item .file-progress-bar .file-progress {
+    width: 50%;
+    height: inherit;
+    border-radius: initial;
+    background-color: hsl(219, 100%, 50%);
+}
+
+.file-uploader .file-upload-box {
+    margin: 10px 20px 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.file-uploader .file-upload-box .box-title {
+    font-size: 1.01em;
+    font-weight: 400;
+    color: hsla(0, 0%, 38%, 0.801);
+}
+
+.file-uploader .file-upload-box .file-browse-button {
+    color: hsl(219, 100%, 50%);
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
