@@ -152,13 +152,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 200ms ease;
+}
 
+.file-uploader .file-upload-box.active {
+    box-shadow: hsla(240, 96%, 32%, 0.397) 0px 2px 8px 0px;
+    background-color: hsl(225, 100%, 98%);
 }
 
 .file-uploader .file-upload-box .box-title {
     font-size: 1.01em;
     font-weight: 400;
     color: hsla(0, 0%, 38%, 0.801);
+}
+
+.file-uploader .file-upload-box.active .box-title {
+    pointer-events: none;
 }
 
 .file-uploader .file-upload-box .file-browse-button {
