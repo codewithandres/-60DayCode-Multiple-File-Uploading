@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
-    --bg-color: hsl(235, 43%, 5%);
+    --bg-color: hsl(235, 38%, 6%);
     --bg-color-white: hsl(0, 0%, 100%);
     --paddig: 1.2em;
 }
